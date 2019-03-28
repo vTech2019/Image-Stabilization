@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "cpp build active file",
+      "command": "g++",
+      "args": [
+        "-g",
+        "main.cpp",
+        "clDevice.hpp",
+        "clDevice.cpp",
+        "ImageStabilization.hpp",
+        "ImageStabilization.cpp",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-I", 
+        "/usr/local/cuda/targets/x86_64-linux/include",
+        "-L", 
+        "/usr/local/cuda-10.1/lib64",
+        "-l",
+        "OpenCL"
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
